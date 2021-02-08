@@ -13,8 +13,11 @@ opencv-python 4.2.0
 imbalanced-learn 0.2.0  
 
 ## Steps:  
-1.Preprocess the video data  
+1.Preprocess the video data    
+  
 2.Use the temporal_model.py to train the temporal stream model and get the output of the model  
+  
 3.Use the spatial_model.py to train the spatial stream model and get the output of the model  
+  
 4.Use the get_weight_value.m and ensemble_weight.m to get the output prediction value of the spatial and temporal stream model by their weight.  
 
