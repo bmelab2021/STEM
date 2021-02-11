@@ -14,9 +14,9 @@ TPR2= xlsread('ense_file','ensemble1','Z2:Z804');%kong
 
 acurve2=0.76;% AUC2
 
-FPR3= xlsread('集成','ensemble1','AB2:AB713');
+FPR3= xlsread('ense_file','ensemble1','AB2:AB713');
 
-TPR3= xlsread('集成','ensemble1','AC2:AC713');%ensemble
+TPR3= xlsread('ense_file','ensemble1','AC2:AC713');%ensemble
 
 acurve3=0.82;% AUC3
 x_dig=0:0.01:1;
