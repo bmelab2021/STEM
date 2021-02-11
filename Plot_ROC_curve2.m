@@ -2,43 +2,43 @@ clc; clear; close all;
 
 %FPR = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.050,0.15,0.15,0.15,0.20,0.20,0.20,0.20,0.20,0.20,0.20,0.25,0.25,0.30,0.35,0.40,0.45,0.45,0.55,0.60,0.65,0.65,0.70,0.70,0.70,0.70,0.70,0.70,0.75,0.75,0.80,0.85,0.90,0.90,0.90,0.95,0.95,0.95,1];
 %TPR = [0,0,0.050,0.050,0.050,0.050,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.20,0.25,0.30,0.35,0.35,0.40,0.45,0.45,0.50,0.55,0.60,0.60,0.60,0.60,0.60,0.60,0.65,0.70,0.80,0.85,0.85,0.85,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-FPR= xlsread('集成','ensemble1','V2:V734');
+FPR= xlsread('ense_file','ensemble1','V2:V734');
 
-TPR= xlsread('集成','ensemble1','W2:W734');%lstm
+TPR= xlsread('ense_file','ensemble1','W2:W734');%lstm
 
-acurve=0.77;%计算总的AUC
+acurve=0.77;% AUC1
 
-FPR2= xlsread('集成','ensemble1','Y2:Y804');
+FPR2= xlsread('ense_file','ensemble1','Y2:Y804');
 
-TPR2= xlsread('集成','ensemble1','Z2:Z804');%kong
+TPR2= xlsread('ense_file','ensemble1','Z2:Z804');%kong
 
-acurve2=0.76;%计算总的AUC
+acurve2=0.76;% AUC2
 
-FPR3= xlsread('集成','ensemble1','AB2:AB713');
+FPR3= xlsread('闆嗘垚','ensemble1','AB2:AB713');
 
-TPR3= xlsread('集成','ensemble1','AC2:AC713');%ensemble
+TPR3= xlsread('闆嗘垚','ensemble1','AC2:AC713');%ensemble
 
-acurve3=0.82;%计算总的AUC
+acurve3=0.82;% AUC3
 x_dig=0:0.01:1;
 y_dig=x_dig;
 
-color1=[0 0 1];%蓝色 gradientboosting
+color1=[0 0 1];% blue gradientboosting
 
-color2=[1,0,0]%红色
+color2=[1,0,0]% red
 
 color3=[1,1, 0]
 color4=[107,105,102]./255;
 h=figure;
-set(h,'units','normalized','position',[0.1 0.1 0.48 0.8]);%设置绘图窗口的大小
-set(h,'color','w');%设置绘图窗口的背景为白色
+set(h,'units','normalized','position',[0.1 0.1 0.48 0.8]);
+set(h,'color','w');
 h2=plot(FPR, TPR,'Color',color1,'LineWidth',2,'MarkerSize',3);hold on;
-plot(x_dig,y_dig,'--','Color',color4,'LineWidth',1.5);hold on;%画中间的虚线
+plot(x_dig,y_dig,'--','Color',color4,'LineWidth',1.5);hold on;
 h1=plot(FPR2, TPR2,'Color',color3,'LineWidth',2,'MarkerSize',3);hold on;
 h3=plot(FPR3, TPR3,'Color',color2,'LineWidth',2,'MarkerSize',3);hold on;
 
 
-xlabel('False Positive Ratio (1-specificity)','fontsize',2,'FontWeight','bold');%x轴
-ylabel('True Positive Ratio (Sensitivity)','fontsize',2,'FontWeight','bold');%y轴
+xlabel('False Positive Ratio (1-specificity)','fontsize',2,'FontWeight','bold');%x 
+ylabel('True Positive Ratio (Sensitivity)','fontsize',2,'FontWeight','bold');%y
 set(gca,'YLim',[0,1]);
 set(gca,'XLim',[0,1]);
 fontsize=26
@@ -49,7 +49,7 @@ set(gca,'YTick',[0:0.2:1])
 
 grid on
 %%
-%%画图例
+%%plot
 ROCtitle_1=['STEM AUC = ',num2str(roundn(acurve3,-3))];
 ROCtitle_2=['Temporal model AUC = ',num2str(roundn(acurve,-3))];
 ROCtitle_3=['Spatial model AUC = ',num2str(roundn(acurve2,-3))];
