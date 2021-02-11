@@ -1,15 +1,15 @@
 clc
 clear
 close
-x= xlsread('集成，寻找最优的时空权重值','Sheet1','E2:E102');
+x= xlsread('ense_file','Sheet1','E2:E102');
 
-y= xlsread('集成，寻找最优的时空权重值','Sheet1','G2:G102');
+y= xlsread('ense_file','Sheet1','G2:G102');
 
 plot(x,y,'LineWidth',2)
 
 fontsize=26
-xlabel('The weight of temporal stream network','FontWeight','bold','fontsize',6);%x轴
-ylabel('Accuracy','FontWeight','bold','fontsize',6);%y轴
+xlabel('The weight of temporal stream network','FontWeight','bold','fontsize',6);%x
+ylabel('Accuracy','FontWeight','bold','fontsize',6);%y
 set(gca,'FontSize',fontsize,'LineWidth',6)
 set(get(gca,'YLabel'),'FontSize',fontsize);
 set(get(gca,'XLabel'),'FontSize',fontsize);
