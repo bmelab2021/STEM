@@ -2,26 +2,26 @@ clc; clear; close all;
 
 %FPR = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.050,0.15,0.15,0.15,0.20,0.20,0.20,0.20,0.20,0.20,0.20,0.25,0.25,0.30,0.35,0.40,0.45,0.45,0.55,0.60,0.65,0.65,0.70,0.70,0.70,0.70,0.70,0.70,0.75,0.75,0.80,0.85,0.90,0.90,0.90,0.95,0.95,0.95,1];
 %TPR = [0,0,0.050,0.050,0.050,0.050,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.20,0.25,0.30,0.35,0.35,0.40,0.45,0.45,0.50,0.55,0.60,0.60,0.60,0.60,0.60,0.60,0.65,0.70,0.80,0.85,0.85,0.85,0.95,0.95,0.95,0.95,0.95,0.95,0.95,0.95,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
-FPR= xlsread('集成','ensemble1','AB2:AB713');
+FPR= xlsread('ense_file','ensemble1','AB2:AB713');
 
-TPR= xlsread('集成','ensemble1','AC2:AC713');
-acurve=trapz(FPR,TPR);%计算AUC
+TPR= xlsread('ense_file','ensemble1','AC2:AC713');
+acurve=trapz(FPR,TPR);% AUC
 
 x_dig=0:0.01:1;
 y_dig=x_dig;
 color2=[1,0,0]
-color1=[0.9300    0.4700    0.5000];%红色
+color1=[0.9300    0.4700    0.5000];% red
 coloot_2=[0 0 255]./255;
 color3=[229 159 1]./255;
 color4=[107,105,102]./255;
 h=figure;
-set(h,'units','normalized','position',[0.1 0.1 0.48 0.8]);%设置绘图窗口的大小
-set(h,'color','w');%设置绘图窗口的背景为白色
+set(h,'units','normalized','position',[0.1 0.1 0.48 0.8]);
+set(h,'color','w');
 h1=plot(FPR, TPR,'Color',color2,'LineWidth',2,'MarkerSize',3);
 hold on;
-plot(x_dig,y_dig,'--','Color',color4,'LineWidth',1.5);%画中间的虚线
-xlabel('False Positive Ratio (1-specificity)','fontsize',2,'FontWeight','bold');%x轴
-ylabel('True Positive Ratio (Sensitivity)','fontsize',2,'FontWeight','bold');%y轴
+plot(x_dig,y_dig,'--','Color',color4,'LineWidth',1.5);
+xlabel('False Positive Ratio (1-specificity)','fontsize',2,'FontWeight','bold');% x
+ylabel('True Positive Ratio (Sensitivity)','fontsize',2,'FontWeight','bold');% y
 set(gca,'YLim',[0,1]);
 set(gca,'XLim',[0,1]);
 fontsize=26;
@@ -32,7 +32,7 @@ set(gca,'YTick',[0:0.2:1])
 
 grid on
 %%
-%%画图例
+%%plot
 
 %%
 
