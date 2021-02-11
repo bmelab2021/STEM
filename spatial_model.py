@@ -76,7 +76,7 @@ clf = GradientBoostingClassifier().fit(over_samples_x, over_samples_y)
 
 acc=clf.score(x_val, y_val);
 sss = clf.predict(x_val)
-print('准确率是',acc)
+print('acc',acc)
 pro_val=clf.predict_proba(x_val)
 
 aa=sss
@@ -90,21 +90,21 @@ numz11=list(a1).count(1)
 num0=len(list(a0))
 num1=len(list(a1))
 
-print('敏感性是',numz11/num1)
-print('特异性是',numz00/num0)
+print('sen',numz11/num1)
+print('spe',numz00/num0)
 
 
 y_predprob = clf.predict_proba(x_val)[:,1]
-print ("AUC Score (Test): %f" % metrics.roc_auc_score(y_val, y_predprob)) #计算AUC的值
+print ("AUC Score (Test): %f" % metrics.roc_auc_score(y_val, y_predprob)) #AUC
    
 
-#保存训练好的模型
+#save model
 from sklearn.externals import joblib
 joblib.dump(clf,'model_kong.pkl')
 
-####加载训练好的模型
+####load model
 # from sklearn.externals import joblib
 # clf=joblib.load('kong_model.pkl')
 # acc=clf.score(x_val, y_val);
-# sss = clf.predict(x_val)#输出测试集的预测值
-# print('准确率是',acc)
+# sss = clf.predict(x_val)
+# print('acc',acc)
