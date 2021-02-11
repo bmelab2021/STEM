@@ -97,7 +97,7 @@ for i in range(1,500):
         list3.append(i)
     print(best)
 
-####计算敏感性与特异性
+####test
 aa=y3
 numz=len(list(aa))
 a0=aa[0:821]
@@ -106,5 +106,5 @@ numz0=list(a0).count(0)
 numz1=list(a1).count(1)
 num0=len(list(a0))
 num1=len(list(a1))
-print('特异性的值是',numz0/num0)
-print('敏感性的值是',numz1/num1)
+print('sen',numz0/num0)
+print('spe',numz1/num1)
