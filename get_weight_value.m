@@ -3,14 +3,14 @@ clear;
 close all;
 
 % data= xlsread('pro','f_35_lstm','L2:M2374');
-lstm= xlsread('集成','ensemble1','B2:C2087');
-kong= xlsread('集成','ensemble1','F2:G2087');
+lstm= xlsread('ense_file','ensemble1','B2:C2087');
+kong= xlsread('ense_file','ensemble1','F2:G2087');
 
 % data2= xlsread('ensemble','train 0.78','A8049:B9499');
 % data=[data1;data2]
 
-%label= xlsread('集成','ensemble1','P2:R2087');
-%data= xlsread('集成','ensemble1','F2:G2087');
+%label= xlsread('录炉鲁脡','ensemble1','P2:R2087');
+%data= xlsread('录炉鲁脡','ensemble1','F2:G2087');
 
 num1=100
 pro0_ensemble=ones(101,1)
