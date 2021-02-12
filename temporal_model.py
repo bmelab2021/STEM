@@ -28,7 +28,7 @@ model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='binary_crossentropy',
-              optimizer='rmsprop',
+              optimizer='adam',
               metrics=['accuracy'])
 
 
